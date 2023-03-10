@@ -9,11 +9,34 @@ function draw() {
     noSmooth();
     noStroke();
 
+    // push();
+    // // noFill();
+    // square(250,100,300)
+    // pop();
+
+    // helperCoordinates();
+
+    let d=dist(width/2,height/2,mouseX,mouseY);
+
     push();
-    // noFill();
-    square(250,100,300)
+    if (mouseX > 250 && mouseX < 550 && mouseY > 100 && mouseY < 400){
+        circle(mouseX,mouseY,10)
+    } else {
+        circle(mouseX,mouseY,d/10)
+    }
     pop();
 
-    let d=dist()
-
 }
+
+function helperCoordinates() { //show coordinates of cursor
+    fill(0);
+    text(
+        '(' +
+        floor(mouseX) +
+        ',' +
+        floor(mouseY) +
+        ')',
+        mouseX,
+        mouseY
+    );
+    }
